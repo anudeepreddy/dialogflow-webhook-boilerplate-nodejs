@@ -1,5 +1,7 @@
-image:
-  file: .gitpod.dockerfile
+ports:
+    - port: 3000
+      onOpen: ignore
 tasks:
 - init: npm install
-  command: node index.js
+  command: npm start
+- command: echo -e "\n\nwebhook url - $(gp url 3000)/webhook \n\nCopy and paste this url in the Dialogflow console"
